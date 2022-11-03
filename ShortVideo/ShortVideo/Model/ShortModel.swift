@@ -10,18 +10,12 @@ import UIKit
 
 class ShortModel {
     var color: UIColor?
+    let url: String? 
     
-    init(color: UIColor?) {
+    init(color: UIColor? = .clear, url: String? = "") {
         self.color = color
-    }
-    
-    static func showDataHome() -> [ShortModel]{
-        var data: [ShortModel] = []
-        for _ in 1...10 {
-            data.append(ShortModel(color: .random()))
-        }
-        return data
-    }
+        self.url = url
+    } 
 }
 
 extension CGFloat {

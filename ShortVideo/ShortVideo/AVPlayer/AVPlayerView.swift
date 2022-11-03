@@ -83,7 +83,7 @@ class AVPlayerView: UIView {
         queryCacheOperation = WebCacheManager.shared().queryURLFromDiskMemory(key: cacheFileKey ?? "", cacheQueryCompletedBlock: { [weak self] (data, hasCache) in
             DispatchQueue.main.async {[weak self] in
                 if !hasCache {
-                    self?.sourceURL = self?.sourceURL?.absoluteString.urlScheme(scheme: "streaming")
+                    self?.sourceURL = self?.sourceURL?.absoluteString.urlScheme(scheme: "https")
                 } else {
                     self?.sourceURL = URL.init(fileURLWithPath: data as? String ?? "")
                 }
